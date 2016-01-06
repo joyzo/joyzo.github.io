@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>kintoneスタイルシート記述サンプル</title>
+  <script type="text/javascript" src="https://js.cybozu.com/jquery/1.11.3/jquery.min.js"></script>
+  <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
+  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css" />
+  <script type="text/javascript">
+    SyntaxHighlighter.all();
+    SyntaxHighlighter.defaults.toolbar = false; // remove 'About SyntaxHighlighter'
+  </script>
+  <link rel="stylesheet" href="./51-us-default.css" type="text/css" />
+  <link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
+
+<body style="background: white;">
+  <div id="content">
+    <div id="container"></div>
+    <h1>kintoneスタイルシート記述サンプル</h1>
+    <p>
+      kintoneプラグイン開発用に提供されているスタイルシートを、従来のkintoneカスタマイズでも利用してUIの統一性をもたせるために利用したく、jQueryによる記載例を書き出しました。<br>
+      （参考：「<a href="https://cybozudev.zendesk.com/hc/ja">cybozu.com developer network</a> > <a href="https://cybozudev.zendesk.com/hc/ja/categories/200219390">kintone plugin</a> > <a href="https://cybozudev.zendesk.com/hc/ja/articles/203302214">スタイルシートの利用</a>」）。
+    </p>
+    <h2>メッセージ</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-alert">
+        <p>メッセージのスタイル、
+          <br>メッセージのスタイル</p>
+        <p>メッセージのスタイル</p>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-alert">
+        <p>メッセージのスタイル、<br>メッセージのスタイル</p>
+        <p>メッセージのスタイル</p>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-alert').append(
+          $('&lt;p&gt;').html('メッセージのスタイル、 <br> メッセージのスタイル'),
+          $('&lt;p&gt;').text('メッセージのスタイル')
+        )
+      );
+    </pre>
+
+    <h2>設定項目の行</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-row">設定項目の行 1</div>
+      <div class="kintoneplugin-row">設定項目の行 2</div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-row">設定項目の行 1</div>
+      <div class="kintoneplugin-row">設定項目の行 2</div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-row').text('設定項目の行 1'),
+        $('&lt;div&gt;').addClass('kintoneplugin-row').html('設定項目の行 2')
+      );
+    </pre>
+
+    <h2>設定項目の見出し（ラベル・必須項目）</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-label">設定項目の見出し</div>
+
+      <div class="kintoneplugin-label">必須項目の見出し
+        <span class="kintoneplugin-require">*</span>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-label">設定項目の見出し</div>
+
+      <div class="kintoneplugin-label">必須項目の見出し
+        <span class="kintoneplugin-require">*</span>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-label').text('設定項目の見出し')
+      );
+
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-label').text('必須項目の見出し').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-require').html('*')
+        )
+      );
+    </pre>
+
+    <h2>テキストボックス</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-input-outer">
+        <input class="kintoneplugin-input-text" type="text">
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-input-outer">
+        <input class="kintoneplugin-input-text" type="text">
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-input-outer').append(
+          $('&lt;input&gt;').prop('type', 'text').addClass('kintoneplugin-input-text')
+        )
+      );
+    </pre>
+
+    <h2>チェックボックス</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="0" id="checkbox-0" checked="">
+          <label for="checkbox-0">チェックボックスA</label>
+        </span>
+      </div>
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="1" id="checkbox-1">
+          <label for="checkbox-1">チェックボックスB</label>
+        </span>
+      </div>
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="2" id="checkbox-2" checked="" disabled="">
+          <label for="checkbox-2">チェックボックスC</label>
+        </span>
+      </div>
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="3" id="checkbox-3" disabled="">
+          <label for="checkbox-3">チェックボックスD</label>
+        </span>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="0" id="checkbox-0" checked="">
+          <label for="checkbox-0">チェックボックスA</label>
+        </span>
+      </div>
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="1" id="checkbox-1">
+          <label for="checkbox-1">チェックボックスB</label>
+        </span>
+      </div>
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="2" id="checkbox-2" checked="" disabled="">
+          <label for="checkbox-2">チェックボックスC</label>
+        </span>
+      </div>
+      <div class="kintoneplugin-input-checkbox">
+        <span class="kintoneplugin-input-checkbox-item">
+          <input type="checkbox" name="checkbox" value="3" id="checkbox-3" disabled="">
+          <label for="checkbox-3">チェックボックスD</label>
+        </span>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-input-checkbox').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-input-checkbox-item').append(
+            $('&lt;input&gt;').prop('type', 'checkbox').prop('name', 'checkbox').prop('id', 'checkbox-0').val(0).prop('checked', true),
+            $('&lt;label&gt;').prop('for', 'checkbox-0').html('チェックボックスA')
+          )
+        )
+      );
+
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-input-checkbox').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-input-checkbox-item').append(
+            $('&lt;input&gt;').prop('type', 'checkbox').prop('name', 'checkbox').prop('id', 'checkbox-1').val(1),
+            $('&lt;label&gt;').prop('for', 'checkbox-1').html('チェックボックスB')
+          ))
+      );
+
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-input-checkbox').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-input-checkbox-item').append(
+            $('&lt;input&gt;').prop('type', 'checkbox').prop('name', 'checkbox').prop('id', 'checkbox-2').val(2).prop('checked', true).prop('disabled', true),
+            $('&lt;label&gt;').prop('for', 'checkbox-2').html('チェックボックスC')
+          )
+        )
+      );
+
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-input-checkbox').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-input-checkbox-item').append(
+            $('&lt;input&gt;').prop('type', 'checkbox').prop('name', 'checkbox').prop('id', 'checkbox-3').val(3).prop('disabled', true),
+            $('&lt;label&gt;').prop('for', 'checkbox-3').html('チェックボックスD')
+          )
+        )
+      );
+    </pre>
+
+    <h2>ドロップダウンリスト</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-dropdown-outer">
+        <div class="kintoneplugin-dropdown">
+          <div class="kintoneplugin-dropdown-selected">
+            <span class="kintoneplugin-dropdown-selected-name">ドロップダウン</span>
+          </div>
+        </div>
+      </div>
+      <div class="kintoneplugin-dropdown-list">
+        <div class="kintoneplugin-dropdown-list-item kintoneplugin-dropdown-list-item-selected">
+          <span class="kintoneplugin-dropdown-list-item-name">オプションA</span>
+        </div>
+        <div class="kintoneplugin-dropdown-list-item">
+          <span class="kintoneplugin-dropdown-list-item-name">オプションB</span>
+        </div>
+        <div class="kintoneplugin-dropdown-list-item">
+          <span class="kintoneplugin-dropdown-list-item-name">オプションC</span>
+        </div>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-dropdown-outer">
+        <div class="kintoneplugin-dropdown">
+          <div class="kintoneplugin-dropdown-selected">
+            <span class="kintoneplugin-dropdown-selected-name">ドロップダウン</span>
+          </div>
+        </div>
+      </div>
+      <div class="kintoneplugin-dropdown-list">
+        <div class="kintoneplugin-dropdown-list-item kintoneplugin-dropdown-list-item-selected">
+          <span class="kintoneplugin-dropdown-list-item-name">オプションA</span>
+        </div>
+        <div class="kintoneplugin-dropdown-list-item">
+          <span class="kintoneplugin-dropdown-list-item-name">オプションB</span>
+        </div>
+        <div class="kintoneplugin-dropdown-list-item">
+          <span class="kintoneplugin-dropdown-list-item-name">オプションC</span>
+        </div>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-dropdown-outer').append(
+          $('&lt;div&gt;').addClass('kintoneplugin-dropdown').append(
+            $('&lt;div&gt;').addClass('kintoneplugin-dropdown-selected').append(
+              $('&lt;span&gt;').addClass('kintoneplugin-dropdown-selected-name').text('ドロップダウン')
+            )
+          )
+        )
+      );
+
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-dropdown-list').append(
+          $('&lt;div&gt;').addClass('kintoneplugin-dropdown-list-item').addClass('kintoneplugin-dropdown-list-item-selected').append(
+              $('&lt;span&gt;').addClass('kintoneplugin-dropdown-list-item-name').text('オプションA')
+          ),
+          $('&lt;div&gt;').addClass('kintoneplugin-dropdown-list-item').append(
+              $('&lt;span&gt;').addClass('kintoneplugin-dropdown-list-item-name').text('オプションB')
+          ),
+          $('&lt;div&gt;').addClass('kintoneplugin-dropdown-list-item').append(
+              $('&lt;span&gt;').addClass('kintoneplugin-dropdown-list-item-name').text('オプションB')
+          )
+        )
+      );
+    </pre>
+
+    <h2>セレクトボックス</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-select-outer">
+        <div class="kintoneplugin-select">
+          <select>
+            <option>ドロップダウンリストA</option>
+            <option>ドロップダウンリストB</option>
+            <option>ドロップダウンリストC</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-select-outer">
+        <div class="kintoneplugin-select">
+          <select>
+            <option>ドロップダウンリストA</option>
+            <option>ドロップダウンリストB</option>
+            <option>ドロップダウンリストC</option>
+          </select>
+        </div>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      var options, $option;
+      var list = {
+        key1: 'ドロップダウンリストA',
+        key2: 'ドロップダウンリストB',
+        key3: 'ドロップダウンリストC'
+      };
+
+      options = $.map(list, function (item, key) {
+        $option = $('&lt;option'&gt;, { text: item });
+        return $option;
+      });
+
+      $('#container').append(
+        $('&lt;div'&gt;).addClass('kintoneplugin-select-outer').append(
+          $('&lt;div'&gt;).addClass('kintoneplugin-select').append(
+            $('&lt;select'&gt;).append(
+              options
+            )
+          )
+        )
+      );
+    </pre>
+
+    <h2>ラジオボタン</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-input-radio">
+        <span class="kintoneplugin-input-radio-item">
+          <input type="radio" name="radio" value="0" id="radio-0" checked="">
+          <label for="radio-0">ラジオボタンA</label>
+        </span>
+        <span class="kintoneplugin-input-radio-item">
+          <input type="radio" name="radio" value="1" id="radio-1">
+          <label for="radio-1">ラジオボタンB</label>
+        </span>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-input-radio">
+        <span class="kintoneplugin-input-radio-item">
+          <input type="radio" name="radio" value="0" id="radio-0" checked="">
+          <label for="radio-0">ラジオボタンA</label>
+        </span>
+        <span class="kintoneplugin-input-radio-item">
+          <input type="radio" name="radio" value="1" id="radio-1">
+          <label for="radio-1">ラジオボタンB</label>
+        </span>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-input-radio').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-input-radio-item').append(
+            $('&lt;input&gt;').prop('type', 'radio').prop('name', 'radio').prop('id', 'radio-0').val(0).prop('checked', true),
+            $('&lt;label&gt;').prop('for', 'radio-0').html('ラジオボタンA')
+          ),
+          $('&lt;span&gt;').addClass('kintoneplugin-input-radio-item').append(
+            $('&lt;input&gt;').prop('type', 'radio').prop('name', 'radio').prop('id', 'radio-1').val(1),
+            $('&lt;label&gt;').prop('for', 'radio-1').html('ラジオボタンB')
+          )
+        )
+      );
+    </pre>
+
+    <h2>ボタン</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <button class="kintoneplugin-button-normal">通常のボタン</button>
+
+      <button class="kintoneplugin-button-disabled">disabledのボタン</button>
+
+      <button class="kintoneplugin-button-dialog-ok">ダイアログのOKボタン</button>
+
+      <button class="kintoneplugin-button-dialog-cancel">ダイアログのキャンセルボタン</button>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <button class="kintoneplugin-button-normal">通常のボタン</button>
+
+      <button class="kintoneplugin-button-disabled">disabledのボタン</button>
+
+      <button class="kintoneplugin-button-dialog-ok">ダイアログのOKボタン</button>
+
+      <button class="kintoneplugin-button-dialog-cancel">ダイアログのキャンセルボタン</button>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;button&gt;').addClass('kintoneplugin-button-normal').text('通常のボタン')
+      );
+
+      $('#container').append(
+        $('&lt;button&gt;').addClass('kintoneplugin-button-disabled').text('disabledのボタン')
+      );
+
+      $('#container').append(
+        $('&lt;button&gt;').addClass('kintoneplugin-button-dialog-ok').text('ダイアログのOKボタン')
+      );
+
+      $('#container').append(
+        $('&lt;button&gt;').addClass('kintoneplugin-button-dialog-cancel').text('ダイアログのキャンセルボタン')
+      );
+    </pre>
+  </div>
+</body>
+
+</html>

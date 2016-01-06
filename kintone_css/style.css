@@ -1,0 +1,21 @@
+body {
+  font: 13px/1.231 "メイリオ",Meiryo,"Hiragino Kaku Gothic ProN","ヒラギノ角ゴ ProN W3","ＭＳ Ｐゴシック","Lucida Grande","Lucida Sans Unicode",Arial,Verdana,sans-serif;
+}
+
+#content {
+  margin-left: 100px;
+}
+
+h2 {
+  margin: 10;
+  padding: 2px 6px;
+  border-left: 4px solid #989898;
+}
+
+.block {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #989898;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  -moz-border-radius: 5px 5px 5px 5px;
+}
