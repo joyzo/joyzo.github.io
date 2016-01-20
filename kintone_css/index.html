@@ -4,13 +4,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>kintoneスタイルシート記述サンプル</title>
-  <script type="text/javascript" src="https://js.cybozu.com/jquery/1.11.3/jquery.min.js"></script>
-  <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
-  <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushXml.js"></script>
-  <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
-  <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushCss.js"></script>
-  <script type="text/javascript" src="https://js.cybozu.com/ace/v1.2.2/ace.js"></script>
-  <link type="text/css" rel="stylesheet" href="syntaxhighlighter/styles/shCoreDefault.css" />
+  <script type="text/javascript" src="../common/jquery.min.js"></script>
+  <script type="text/javascript" src="../common/syntaxhighlighter/scripts/shCore.js"></script>
+  <script type="text/javascript" src="../common/syntaxhighlighter/scripts/shBrushXml.js"></script>
+  <script type="text/javascript" src="../common/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+  <script type="text/javascript" src="../common/syntaxhighlighter/scripts/shBrushCss.js"></script>
+  <link type="text/css" rel="stylesheet" href="../common/syntaxhighlighter/styles/shCoreDefault.css" />
   <script type="text/javascript">
     SyntaxHighlighter.all();
     SyntaxHighlighter.defaults.toolbar = false; // remove 'About SyntaxHighlighter'
@@ -24,9 +23,9 @@
     ga('create', 'UA-72119839-1', 'auto');
     ga('send', 'pageview');
   </script>
-  <link rel="shortcut icon" href="./favicon.ico">
-  <link rel="stylesheet" href="./51-us-default.css" type="text/css" />
-  <link rel="stylesheet" href="./style.css" type="text/css" />
+  <link rel="shortcut icon" href="../common/favicon.ico">
+  <link rel="stylesheet" href="../common/51-us-default.css" type="text/css" />
+  <link rel="stylesheet" href="../common/style.css" type="text/css" />
 </head>
 
 <body style="background: white;">
@@ -37,7 +36,7 @@
     <h1>kintoneスタイルシート記述サンプル</h1>
     <p>
       kintoneプラグイン開発用に提供されているスタイルシートを、従来のkintoneカスタマイズでも利用してUIの統一性をもたせるために利用したく、jQueryによる記載例を書き出しました。<br>
-      （参考：「<a href="https://cybozudev.zendesk.com/hc/ja">cybozu.com developer network</a> > <a href="https://cybozudev.zendesk.com/hc/ja/categories/200219390">kintone plugin</a> > <a href="https://cybozudev.zendesk.com/hc/ja/articles/203302214">スタイルシートの利用</a>」）。
+      （参考：「<a href="https://cybozudev.zendesk.com/hc/ja">cybozu.com developer network</a> > <a href="https://cybozudev.zendesk.com/hc/ja/categories/200219390">kintone plugin</a> > <a href="https://cybozudev.zendesk.com/hc/ja/articles/203302214">スタイルシートの利用</a>」）
     </p>
     <h2>メッセージ</h2>
     <h4>表示例</h4>
@@ -217,7 +216,8 @@
           $('&lt;span&gt;').addClass('kintoneplugin-input-checkbox-item').append(
             $('&lt;input&gt;').prop('type', 'checkbox').prop('name', 'checkbox').prop('id', 'checkbox-1').val(1),
             $('&lt;label&gt;').prop('for', 'checkbox-1').html('チェックボックスB')
-          ))
+          )
+        )
       );
 
       $('#container').append(
