@@ -174,6 +174,428 @@
     </div>
     <!-- end of jQuery UI -->
 
+    <!-- start of Moment.js -->
+    <h2><a href="http://momentjs.com/">Moment.js</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="momentjs-version">
+      </select>
+      <script>
+        var versions = ['2.10.6', '2.10.3', '2.10.2', '2.9.0', '2.8.4', '2.8.3'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#momentjs-version').append(
+          options
+        );
+      </script>
+      <div id="momentjs-url" style="margin-top:20px;"></div>
+      <script>
+      var js_url = 'https://js.cybozu.com/momentjs/'+$('#momentjs-version').val()+'/moment.min.js';
+      var js_url_2 = 'https://js.cybozu.com/momentjs/'+$('#momentjs-version').val()+'/moment-with-locales.min.js';
+        $('#momentjs-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url_2+'">'+js_url_2+'</a>')
+          )
+        );
+        $('#momentjs-version').change(function() {
+          var js_url = 'https://js.cybozu.com/momentjs/'+$('#momentjs-version').val()+'/moment.min.js';
+          var js_url_2 = 'https://js.cybozu.com/momentjs/'+$('#momentjs-version').val()+'/moment-with-locales.min.js';
+          $('#momentjs-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url_2+'">'+js_url_2+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of Moment.js -->
+
+    <!-- start of SweetAlert -->
+    <h2><a href="http://tristanedwards.me/sweetalert">SweetAlert</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="sweetalert-version">
+      </select>
+      <script>
+        var versions = ['1.1.0', '0.5.0'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#sweetalert-version').append(
+          options
+        );
+      </script>
+      <div id="sweetalert-url" style="margin-top:20px;"></div>
+      <script>
+        var js_url = 'https://js.cybozu.com/sweetalert/v'+$('#sweetalert-version').val()+'/sweetalert.min.js';
+        var css_url = 'https://js.cybozu.com/sweetalert/v' + $('#sweetalert-version').val() + '/sweetalert.css';
+        $('#sweetalert-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+css_url+'">'+css_url+'</a>')
+          )
+        );
+        $('#sweetalert-version, #sweetalert-theme').change(function() {
+          js_url = 'https://js.cybozu.com/sweetalert/v'+$('#sweetalert-version').val()+'/sweetalert.min.js';
+          css_url = 'https://js.cybozu.com/sweetalert/v' + $('#sweetalert-version').val() + '/sweetalert.css';
+          $('#sweetalert-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+css_url+'">'+css_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of SweetAlert -->
+
+    <!-- start of Spin.js -->
+    <h2><a href="http://fgnass.github.io/spin.js/">Spin.js</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="spinjs-version">
+      </select>
+      <script>
+        var versions = ['2.3.2', '2.0.1'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#spinjs-version').append(
+          options
+        );
+      </script>
+      <div id="spinjs-url" style="margin-top:20px;"></div>
+      <script>
+        var js_url = 'https://js.cybozu.com/spinjs/'+$('#spinjs-version').val()+'/spin.min.js';
+        $('#spinjs-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          )
+        );
+        $('#spinjs-version').change(function() {
+          var js_url = 'https://js.cybozu.com/spinjs/'+$('#spinjs-version').val()+'/spin.min.js';
+          $('#spinjs-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of Spin.js -->
+
+    <!-- start of jqGrid -->
+    <h2><a href="http://www.trirand.com/blog/">jqGrid</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="jqgrid-version">
+      </select>
+      <script>
+        var versions = ['5.0.0', '4.8.2', '4.7.1', '4.6.0'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#jqgrid-version').append(
+          options
+        );
+      </script>
+      <div id="jqgrid-url" style="margin-top:20px;"></div>
+      <script>
+      var js_url = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/jquery.jqGrid.min.js';
+      var js_url_2 = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/grid.locale-ja.js';
+      var js_url_3 = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/grid.locale-en.js';
+      var js_url_4 = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/grid.locale-cn.js';
+      var css_url = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/ui.jqgrid.css';
+        $('#jqgrid-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url_2+'">'+js_url_2+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url_3+'">'+js_url_3+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url_4+'">'+js_url_4+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+css_url+'">'+css_url+'</a>')
+          )
+        );
+        $('#jqgrid-version').change(function() {
+          var js_url = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/jquery.jqGrid.min.js';
+          var js_url_2 = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/grid.locale-ja.js';
+          var js_url_3 = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/grid.locale-en.js';
+          var js_url_4 = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/grid.locale-cn.js';
+          var css_url = 'https://js.cybozu.com/jqgrid/v'+$('#jqgrid-version').val()+'/ui.jqgrid.css';
+          $('#jqgrid-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url_2+'">'+js_url_2+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url_3+'">'+js_url_3+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url_4+'">'+js_url_4+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+css_url+'">'+css_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of jqGrid -->
+
+    <!-- start of DataTables -->
+    <h2><a href="http://www.datatables.net/">DataTables</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="datatables-version">
+      </select>
+      <script>
+        var versions = ['1.10.10', '1.10.9', '1.10.5'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#datatables-version').append(
+          options
+        );
+      </script>
+      <div id="datatables-url" style="margin-top:20px;"></div>
+      <script>
+        var js_url = 'https://js.cybozu.com/datatables/v'+$('#datatables-version').val()+'/js/jquery.dataTables.min.js';
+        var css_url = 'https://js.cybozu.com/datatables/v' + $('#datatables-version').val() + '/css/jquery.dataTables.min.css';
+        $('#datatables-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          ),
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+css_url+'">'+css_url+'</a>')
+          )
+        );
+        $('#datatables-version, #datatables-theme').change(function() {
+          js_url = 'https://js.cybozu.com/datatables/v'+$('#datatables-version').val()+'/js/jquery.dataTables.min.js';
+          css_url = 'https://js.cybozu.com/datatables/v' + $('#datatables-version').val() + '/css/jquery.dataTables.min.css';
+          $('#datatables-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            ),
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+css_url+'">'+css_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of DataTables -->
+
+    <!-- start of Chart.js -->
+    <h2><a href="http://www.chartjs.org/">Chart.js</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="chartjs-version">
+      </select>
+      <script>
+        var versions = ['1.0.2', '1.0.1', '1.0.1'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#chartjs-version').append(
+          options
+        );
+      </script>
+      <div id="chartjs-url" style="margin-top:20px;"></div>
+      <script>
+        var js_url = 'https://js.cybozu.com/chartjs/v'+$('#chartjs-version').val()+'/Chart.min.js';
+        $('#chartjs-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          )
+        );
+        $('#chartjs-version').change(function() {
+          var js_url = 'https://js.cybozu.com/chartjs/v'+$('#chartjs-version').val()+'/Chart.min.js';
+          $('#chartjs-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of Chart.js -->
+
+    <!-- start of AngularJS -->
+    <h2><a href="https://angularjs.org/">AngularJS</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="angularjs-version">
+      </select>
+      <script>
+        var versions = ['1.4.8', '1.4.7', '1.4.5', '1.4.3', '1.4.1', '1.4.0', '1.3.20', '1.3.18', '1.3.17', '1.3.16', '1.3.15', '1.3.14', '1.3.11', '1.3.5', '1.2.29', '1.2.28', '1.2.27', '1.2.26'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#angularjs-version').append(
+          options
+        );
+      </script>
+      <div id="angularjs-url" style="margin-top:20px;"></div>
+      <script>
+        var js_url = 'https://js.cybozu.com/angularjs/v'+$('#angularjs-version').val()+'/angular.min.js';
+        $('#angularjs-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          )
+        );
+        $('#angularjs-version').change(function() {
+          var js_url = 'https://js.cybozu.com/angularjs/v'+$('#angularjs-version').val()+'/angular.min.js';
+          $('#angularjs-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of AngularJS -->
+
+    <!-- start of Underscore.js -->
+    <h2><a href="http://underscorejs.org/#template">Underscore.js</a></h2>
+    <div class="block">
+      <span>バージョン：</span>
+      <select id="underscorejs-version">
+      </select>
+      <script>
+        var versions = ['1.8.3'];
+        var options, $option, isSelected;
+        options = $.map(versions, function(value, index) {
+          isSelected = (index === 0);
+          $option = $('<option>', {
+            value: value,
+            text: value,
+            selected: isSelected
+          });
+          return $option;
+        });
+        $('#underscorejs-version').append(
+          options
+        );
+      </script>
+      <div id="underscorejs-url" style="margin-top:20px;"></div>
+      <script>
+        var js_url = 'https://js.cybozu.com/underscore/'+$('#underscorejs-version').val()+'/underscore-min.js';
+        $('#underscorejs-url').empty().append(
+          $('<div>').addClass('url').append(
+            $('<span>').text('URL: '),
+            $('<a href="'+js_url+'">'+js_url+'</a>')
+          )
+        );
+        $('#underscorejs-version').change(function() {
+          var js_url = 'https://js.cybozu.com/underscore/'+$('#underscorejs-version').val()+'/underscore-min.js';
+          $('#underscorejs-url').empty().append(
+            $('<div>').addClass('url').append(
+              $('<span>').text('URL: '),
+              $('<a href="'+js_url+'">'+js_url+'</a>')
+            )
+          );
+        });
+      </script>
+    </div>
+    <!-- end of Underscore.js -->
+
   </div>
 </body>
 
