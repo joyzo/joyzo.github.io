@@ -1,0 +1,128 @@
+@charset "utf-8";
+body {
+	background:#f9f9f9;
+}
+#mainContent #formarea dl {
+	margin:0 0 10px 0;
+	font-size:14px;
+}
+#mainContent {
+	background:#FFF;
+	border:1px solid #CCC;
+}
+#mainContent h1 {
+	font-size:26px !important;
+	border-bottom:2px solid #CCC;
+	padding-bottom:10px !important;
+	margin-bottom:20px;
+}
+#designContainer input[type="text"], input[type="password"], textarea, select {
+	padding:5px;
+	border:1px solid #CCC;
+}
+.btnSubmit {
+	text-align:center;
+	margin-top:10px;
+}
+.btnSubmit input {
+	padding:4px 10px;
+	color:#555;
+	font-weight:bold;
+	width:140px;
+	height:40px;
+	border:1px solid #b2b2b2;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(235, 235, 235, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(235, 235, 235, 1)));
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(235, 235, 235, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(235, 235, 235, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(235, 235, 235, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(235, 235, 235, 1) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ebebeb', GradientType=0 ); /* IE6-9 */
+   	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.30);
+	-moz-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.30);
+	-webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.30);
+}
+.btnSubmit input:hover {
+	background: rgb(235,235,235); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(235, 235, 235, 1) 0%, rgba(255, 255, 255, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(235, 235, 235, 1)), color-stop(100%, rgba(255, 255, 255, 1)));
+	background: -webkit-linear-gradient(top, rgba(235, 235, 235, 1) 0%, rgba(255, 255, 255, 1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(235, 235, 235, 1) 0%, rgba(255, 255, 255, 1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(235, 235, 235, 1) 0%, rgba(255, 255, 255, 1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(235, 235, 235, 1) 0%, rgba(255, 255, 255, 1) 100%); /* W3C */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebebeb', endColorstr='#ffffff', GradientType=0 ); /* IE6-9 */
+   	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.30);
+	-moz-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.30);
+	-webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.30);
+}
+
+/**** LINK-tag style sheet green.css ****/
+.icheckbox_minimal-green, .iradio_minimal-green {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	background: url(/images/green.png) no-repeat;
+	border: none;
+}
+.icheckbox_minimal-green, .icheckbox_minimal-green.static:hover {
+	background-position: 0 0;
+}
+.icheckbox_minimal-green.hover,  .icheckbox_minimal-green:hover {
+	background-position: -24px 0;
+}
+.icheckbox_minimal-green.checked {
+	background-position: -48px 0;
+}
+.iradio_minimal-green, .iradio_minimal-green.static:hover {
+	background-position: -120px 0;
+}
+.iradio_minimal-green.hover,  .iradio_minimal-green:hover {
+	background-position: -144px 0;
+}
+.iradio_minimal-green.checked {
+	background-position: -168px 0;
+}
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),  only screen and (-moz-min-device-pixel-ratio: 1.5),  only screen and (-o-min-device-pixel-ratio: 1.5),  only screen and (min-device-pixel-ratio: 1.5) {
+ .icheckbox_minimal-green,  .iradio_minimal-green {
+ background-image: url(/images/green.png);
+ -webkit-background-size: 240px 24px;
+ background-size: 240px 24px;
+}
+}
+label {
+	display:block;
+	cursor:pointer;
+}
+.icheckbox_minimal-green,
+.iradio_minimal-green {
+	margin-right:5px;
+	float:left;
+}
+#formarea dd div.checkbox,
+#formarea dd div.radiobutton{
+float:none;
+}
+dd p{
+	margin:0 0 10px !important;
+	display:block;
+	line-height:22px;
+	width:100%;
+}
+dd p:hover {
+	background:#ffffcc;
+}
+input, select, textarea{font-size:14px !important;}
+input:hover, select:hover, textarea:hover{background:#ffffcc;}
+input[type="submit"]{cursor:pointer;}
+#designContainer .inputTextShort {
+	width:150px;
+}
+
+input[type="file"]{
+ width:100%;
+}
