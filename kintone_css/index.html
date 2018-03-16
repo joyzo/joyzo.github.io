@@ -46,7 +46,8 @@
     <h1>kintoneスタイルシート記述サンプル</h1>
     <p>
       kintoneプラグイン開発用に提供されているスタイルシートを、従来のkintoneカスタマイズでも利用してUIの統一性をもたせるために利用したく、jQueryによる記載例を書き出しました。<br>
-      （参考：「<a href="https://cybozudev.zendesk.com/hc/ja">cybozu.com developer network</a> > <a href="https://cybozudev.zendesk.com/hc/ja/categories/200219390">kintone plugin</a> > <a href="https://cybozudev.zendesk.com/hc/ja/articles/203302214">スタイルシートの利用</a>」）
+      （参考：「<a href="https://cybozudev.zendesk.com/hc/ja">cybozu.com developer network</a> > <a href="https://cybozudev.zendesk.com/hc/ja/categories/200219390">kintone plugin</a> > <a href="https://cybozudev.zendesk.com/hc/ja/articles/203302214">スタイルシートの利用</a>」）<br>
+      テーブルのスタイルも <code>51-modern-default.js</code> から新しく登場していますが、HTMLのテンプレートエンジンやJavaScriptのフレームワークと一緒に使わないとjQueryを使ってのロジックの落とし込みはコードが煩雑になりそうです。
     </p>
     <h2>メッセージ</h2>
     <h4>表示例</h4>
@@ -126,6 +127,59 @@
         $('&lt;div&gt;').addClass('kintoneplugin-label').text('必須項目の見出し').append(
           $('&lt;span&gt;').addClass('kintoneplugin-require').html('*')
         )
+      );
+    </pre>
+
+    <h2>設定項目名（ラベル・必須項目）</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-title">設定項目名</div>
+
+      <div class="kintoneplugin-title">必須の設定項目名
+        <span class="kintoneplugin-require">*</span>
+      </div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-title">設定項目名</div>
+
+      <div class="kintoneplugin-title">必須の設定項目名
+        <span class="kintoneplugin-require">*</span>
+      </div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-title').text('設定項目名')
+      );
+
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-title').text('必須の設定項目名').append(
+          $('&lt;span&gt;').addClass('kintoneplugin-require').html('*')
+        )
+      );
+    </pre>
+
+    <h2>設定項目の説明</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <div class="kintoneplugin-title">設定項目名</div>
+      <div class="kintoneplugin-desc">設定項目の説明</div>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <div class="kintoneplugin-title">設定項目名</div>
+      <div class="kintoneplugin-desc">設定項目の説明</div>
+    </pre>
+
+    <h4>記述例（jQuery）</h4>
+    <pre class="brush: js;">
+      $('#container').append(
+        $('&lt;div&gt;').addClass('kintoneplugin-title').text('設定項目名'),
+        $('&lt;div&gt;').addClass('kintoneplugin-desc').text('設定項目の説明')
       );
     </pre>
 
@@ -459,6 +513,66 @@
         $('&lt;button&gt;').addClass('kintoneplugin-button-dialog-cancel').text('ダイアログのキャンセルボタン')
       );
     </pre>
+
+    <h2>テーブル</h2>
+    <h4>表示例</h4>
+    <div class="block">
+      <table class="kintoneplugin-table">
+        <thead>
+          <tr>
+            <th class="kintoneplugin-table-th"><span class="title">列タイトル</span></th>
+            <th class="kintoneplugin-table-th-blankspace"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="kintoneplugin-table-td-control">
+                <div class="kintoneplugin-table-td-control-value">
+                  <div class="kintoneplugin-input-outer">
+                    <input class="kintoneplugin-input-text" type="text">
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="kintoneplugin-table-td-operation">
+              <button type="button" class="kintoneplugin-button-add-row-image" title="Add row"></button>
+              <button type="button" class="kintoneplugin-button-remove-row-image" title="Delete this row"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h4>記述例（HTML）</h4>
+    <pre class="brush: html;">
+      <table class="kintoneplugin-table">
+        <thead>
+          <tr>
+            <th class="kintoneplugin-table-th"><span class="title">列タイトル</span></th>
+            <th class="kintoneplugin-table-th-blankspace"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="kintoneplugin-table-td-control">
+                <div class="kintoneplugin-table-td-control-value">
+                  <div class="kintoneplugin-input-outer">
+                    <input class="kintoneplugin-input-text" type="text">
+                  </div>
+                </div>
+              </div>
+            </td>
+            <td class="kintoneplugin-table-td-operation">
+              <button type="button" class="kintoneplugin-button-add-row-image" title="Add row"></button>
+              <button type="button" class="kintoneplugin-button-remove-row-image" title="Delete this row"></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </pre>
+
   </div>
 </body>
 
